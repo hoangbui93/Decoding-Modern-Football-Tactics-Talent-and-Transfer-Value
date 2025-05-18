@@ -1,5 +1,7 @@
 # DECODING MODERN FOOTBALL - TACTICS, TALENT AND TRANSFER VALUE
 
+![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/%E2%9A%BD.jpg)
+
 # Introdution
 Football is known as “the beautiful game” because of its enduring appeal throughout history. Today, as technology permeates modern football, data analytics has become an integral part of the sport, offering invaluable support to players, coaches, and decision-makers. By leveraging data, tactics can be optimized, player performance assessed more objectively, and strategic or transfer decisions made with greater precision. Against this backdrop, this project harnesses longitudinal data from EA SPORTS FIFA (now EA SPORTS FC) to analyze the evolution of tactical trends, uncover the attributes that define an outstanding player and evaluate the accuracy of virtual market valuations. The findings aim to provide actionable insights for squad building and strategic development in contemporary football.
 
@@ -47,16 +49,17 @@ A comprehensive analysis that uncovers modern tactical shifts, reveals factors b
 - Random Forrest Regression
 
 # 📁 Files
+- `🎓_graduation_project`
 - `🎓_Graduation_Project.ipynb`: Complete Google Colab notebook with code, analysis, and visualizations
 - `🎓_graduation_project.py`: Python version of the project (extracted from notebook)
-- `charts/`: Folder for project visualizations (for embedding in README)
-- `README.md`: 
+- `pics/`: Folder for project visualizations (for embedding in README)
+- `README.md`: Project overview, methods, and summary of key findings
 
 # 🌍 Data Sources
 - Public dataset from Kaggle (FIFA 23 complete player dataset: [https://www.kaggle.com/datasets/stefanoleone992/fifa-23-complete-player-dataset?select=male_players+%28legacy%29.csv](https://www.kaggle.com/datasets/stefanoleone992/fifa-23-complete-player-dataset?select=male_players+%28legacy%29.csv))
 - Public dataset from Kaggle (Football Data from Transfermarkt:
-  - [https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=players.csv](https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=players.csv)
-  - [https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=player_valuations.csv](https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=player_valuations.csv))
+  - [https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=players.csv](https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=players.csv))
+  - [https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=player_valuations.csv](https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=player_valuations.csv)
 - Public dataset from Kaggle (Countries by Continent: [https://www.kaggle.com/datasets/hserdaraltan/countries-by-continent?select=Countries+by+continents.csv](https://www.kaggle.com/datasets/hserdaraltan/countries-by-continent?select=Countries+by+continents.csv))
 
 # 📊 Data Overview
@@ -91,10 +94,18 @@ A comprehensive analysis that uncovers modern tactical shifts, reveals factors b
 | **Detailed Attributes**| Includes 35+ skill-related columns such as `attacking_finishing`, `movement_sprint_speed`, `power_shot_power`, `mentality_vision`, `defending_sliding_tackle`, `goalkeeping_reflexes`, etc. |
 
 # 🚫 Data Restrictions
+The data used in this project comes from two main domains:
+- **FIFA 23 (EA Sports)** — representing in-game player attributes and estimated market value (value_eur).
+- **Transfermarkt** — providing real-world player valuations (market_value_in_eur) along with individual and club-related metadata.
 
+However, there are some key limitations to note:
+- While EA Sports **FIFA player data** incorporates real-world performance assessments and many off-field factors, it **lacks comprehensive statistics** such as appearances, goals, assists, expected goals (xG), clean sheets, etc. Therefore, this project focuses solely on in-game attributes to explore and infer connections to real-world football—while acknowledging that these game-based metrics are a simulation of the entire real-world football landscape.
+- **Discrepancy in value definition:** value_eur from FIFA may not be representative of real-world market behavior. It reflects EA’s internal in-game valuation model, which may undervalue or overvalue players relative to actual transfer fees.
+- **Temporal mismatch:** FIFA 23 versions are released annually in **September of the previous year**, which means they represent player data up to 09/2022, not the calendar year 2023. But to avoid complexity and within the scope of this project, we will assume that each fifa_version represents the corresponding year.
+- **Join key matching challenges:** Due to inconsistencies in player naming conventions and lack of metadata (e.g., date of birth, nationality), not all players can be successfully matched between the FIFA and Transfermarkt datasets. Matching is done using a composite key (name, date of birth, nationality name) with a reasonable success rate (68,830/161,583).
+- **Multiple valuations per year:** Some players have been valued multiple times by Transfermarkt in the same year. In such cases, we used the **mean market value** for that year to maintain consistency.
 
 # 🧹 Data Cleaning and Processing
-
 ## FIFA 23 complete player dataset
 - Remove unnessary columns
 - Check data consistency
