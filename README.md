@@ -304,6 +304,9 @@ This correlation heatmap is useful for clustering player roles or building class
 > The EDA results show that the data has a clear structure, is stable over time and has a clear stratification between indicators. We don't need to remove outliers because these are all important data points that support the subsequent analysis well.
 
 # Part 1 - Tactical Shift Over Time
+
+![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/%E2%9A%BD%E2%9A%BD%E2%9A%BD.jpg)
+
 ## Which position has evolved the most in modern football?
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/MainAttrsbyPosOvertime.png)
 
@@ -383,6 +386,9 @@ From this chart we can see that there has been a clear shift in the tactical met
 
 # **Part 2 – The Making of a Great Player**
 > ***This study focuses on in-game attributes only, not real-life performance metrics.***
+
+![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/Gullit.jpg)
+
 ## **What main attributes make a great player?**
 > ***Analysis is based on player attributes in EA FIFA game data, which reflect a gamified interpretation of real-life performance.***
 
@@ -473,6 +479,9 @@ The most important attributes (by coefficient):
 > ***Apart from the goalkeeper position, which is a very special position in football, we can see that the most core attributes of a great player are all in the stats that serve the ability to attack and find goals. This means that a midfielder or forward who plays well will always have an advantage over a defender in the race for individual titles, which is absolutely true in modern football.***
 
 # **Part 3 - Market Pulse: Underrated vs Overrated**
+
+![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/%E2%9A%BD%E2%9A%BD%E2%9A%BD%E2%9A%BD.jpg)
+
 ## **What factors greatly affect a player's value?**
 - To analyze this, we will use one-hot encoding for non-numeric columns such as work_rate, player_tags, player_traits, preferred_foot, position_group.
 - The nationality_name column has 145 unique countries so we will join with country_continent_df to get 6 continents then one-hot encoding it.
