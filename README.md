@@ -233,7 +233,9 @@ The bar chart shows the distribution of players by position group:
 
 ## Distribution of main attributes
 
-Because overall is averaged by main attributes, and main attributes are averaged by detailed attributes, we only need to EDA by main attributes, then analyze in more detail.
+![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/m10attrs.jpg)
+
+According to EA Sports' calculation that we see in the picture, overall is averaged by main attributes, and main attributes are averaged by detailed attributes, so we only need to EDA by main attributes, then analyze in more detail.
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/DistributionbyMainAttrs.png)
 
@@ -628,6 +630,7 @@ The Overrated – Underrated analysis is not just a data exercise — it's a **s
 - Identify **high-potential transfer targets** at fair or bargain prices.
 - Minimize **financial risks** associated with overpaying.
 - Optimize **human resource investment** based on objective performance indicators rather than subjective bias or media influence.
+
 **📌 Recommendations for Clubs & Transfer Analysts:**
 - **Integrate Predictive Valuation into Scouting Pipelines**
 Use machine learning-based valuation as a standard filter when evaluating new player targets. This enables **early identification of undervalued talent and helps prioritize recruitment efforts.**
@@ -641,7 +644,6 @@ Data-backed insights on overvaluation can be a **powerful negotiation tool**, he
 While predictive models offer quantitative power, they should **complement, not replace**, the work of scouts and analysts. A hybrid approach—balancing data with tactical fit, attitude, and injury history—yields the best decisions.
 > ⚽ **Final Thought:**
 In an era where **transfer decisions can define a club's future**, embracing data-driven valuation isn't just a competitive advantage — it's a **necessity for modern football success.**
-
 
 # 🔗 Colab Notebook
 👉 [Open in Google Colab](https://colab.research.google.com/drive/1ma19-GwRy4zmyPqdkOeCV0IZx0ErDkVg?usp=sharing)
