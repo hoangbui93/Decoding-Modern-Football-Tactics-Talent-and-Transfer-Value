@@ -55,8 +55,8 @@ A comprehensive analysis that uncovers modern tactical shifts, reveals factors b
 # 🌍 Data Sources
 - Public dataset from Kaggle (FIFA 23 complete player dataset: [https://www.kaggle.com/datasets/stefanoleone992/fifa-23-complete-player-dataset?select=male_players+%28legacy%29.csv](https://www.kaggle.com/datasets/stefanoleone992/fifa-23-complete-player-dataset?select=male_players+%28legacy%29.csv))
 - Public dataset from Kaggle (Football Data from Transfermarkt:
-  - [https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=players.csv](https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=players.csv))
-  - [https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=player_valuations.csv](https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=player_valuations.csv)
+  - [https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=players.csv](https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=players.csv)
+  - [https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=player_valuations.csv](https://www.kaggle.com/datasets/davidcariboo/player-scores/data?select=player_valuations.csv))
 - Public dataset from Kaggle (Countries by Continent: [https://www.kaggle.com/datasets/hserdaraltan/countries-by-continent?select=Countries+by+continents.csv](https://www.kaggle.com/datasets/hserdaraltan/countries-by-continent?select=Countries+by+continents.csv))
 
 # 📊 Data Overview
