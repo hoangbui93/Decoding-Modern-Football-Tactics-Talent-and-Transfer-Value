@@ -354,15 +354,10 @@ Analyzing the evolution of average player attributes by position across FIFA edi
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/MeanYearlyChangeinMainAttrs.png)
 
 - Dribbling and Defending are the two most changed attributes
- - Defender (DF): Dribbling has increased the most, followed by Passing
-➤ Defenders today need individual technique and the ability to deploy the ball from the back, not just pure defense.
- - Midfielder (MF): Defending has increased very strongly, surpassing Shooting and Dribbling
-➤ Reflecting the trend of comprehensive midfielders: both organizing the play and participating in pressing, intercepting, and supporting defenders.
- - Forward (FW): Increasing steadily in many attributes, but Passing and Defending are notable
-➤ Modern strikers not only know how to score goals but also participate in supporting pressing, building play, they are the first line of defense when the home team does not have the ball.
-
-- Pace (speed) decreased significantly in midfielders, increased at least in the other 2 groups
-➤ Shows that speed is no longer the decisive factor — instead, tactical thinking, coordination and movement without the ball are.
+  - Defender (DF): Dribbling has increased the most, followed by Passing ➤ Defenders today need individual technique and the ability to deploy the ball from the back, not just pure defense.
+  - Midfielder (MF): Defending has increased very strongly, surpassing Shooting and Dribbling ➤ Reflecting the trend of comprehensive midfielders: both organizing the play and participating in pressing, intercepting, and supporting defenders.
+  - Forward (FW): Increasing steadily in many attributes, but Passing and Defending are notable ➤ Modern strikers not only know how to score goals but also participate in supporting pressing, building play, they are the first line of defense when the home team does not have the ball.
+- Pace (speed) decreased significantly in midfielders, increased at least in the other 2 groups ➤ Shows that speed is no longer the decisive factor — instead, tactical thinking, coordination and movement without the ball are.
 
 **📌 Conclusion**
 - The most significant changes over the years are Dribbling (especially in defenders), Defending (clearly in midfielders), and Passing (in defenders and forwards).
