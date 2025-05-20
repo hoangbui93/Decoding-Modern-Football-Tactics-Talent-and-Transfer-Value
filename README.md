@@ -49,7 +49,7 @@ A comprehensive analysis that uncovers modern tactical shifts, reveals factors b
 - Random Forrest Regression
 
 # 📁 Files
-- `🎓_graduation_project`
+- `🎓_graduation_project.pptx`: Presentation file
 - `🎓_Graduation_Project.ipynb`: Complete Google Colab notebook with code, analysis, and visualizations
 - `🎓_graduation_project.py`: Python version of the project (extracted from notebook)
 - `pics/`: Folder for project visualizations (for embedding in README)
