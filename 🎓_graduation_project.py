@@ -719,10 +719,32 @@ plt.show()
 **Conclusion**
 > **Football has always been in constant motion and change throughout its history, with increasingly high and complex tactical requirements, players also need to change to adapt, they are no longer constrained in traditional roles but are increasingly flexible and versatile.**
 
-## **Part 2 – The Making of a Great Player**
+# 🔧 **Recommendations for Coaches, Scouts, and Football Analysts**
+
+📌 **For Coaches**
+- **Integrate versatility into training philosophy:** Encourage players, especially defenders and midfielders, to develop skills beyond their traditional roles. For example, defenders should be trained in ball control and distribution, while midfielders should be drilled on defensive positioning and recovery.
+- **Tactical emphasis on collective pressing and transition play:** Build tactical systems that emphasize **press-resistance**, **quick transitions**, and **fluid positional play**, leveraging the modern player's broader skillset.
+- **Adapt to player evolution:** Utilize players who can operate in multiple systems and positions (e.g., inverted full-backs, hybrid midfielders), maximizing tactical flexibility against different opponents.
+
+🧠 **For Football Analysts**
+- **Update performance benchmarks by position:** Attribute baselines need to be adjusted as traditional roles have evolved. For instance, a modern centre-back’s passing stats may now be as critical as their tackling.
+- **Incorporate attribute evolution into player evaluations:** Use historical attribute trends to predict future value and role adaptability, especially for youth development and long-term squad planning.
+- **Quantify versatility impact:** Measure how players with higher cross-positional attributes contribute to team success, particularly in systems reliant on **fluid formations** or **total football principles.**
+
+🕵️ **For Scouting & Recruitment**
+- **Target multi-dimensional profiles:** Prioritize scouting players who show high development in **non-traditional attributes** for their position (e.g., high Dribbling/Passing for defenders or high Defending for forwards).
+- **Track attribute trends to spot undervalued talent:** Use insights on emerging tactical requirements (e.g., pressing forwards or playmaking full-backs) to identify underrated players who may not stand out under older scouting criteria.
+- **Scout for cognitive & tactical intelligence:** Prioritize players with high vision, reaction, and marking awareness — key traits that support modern tactical systems like **gegenpressing, positional play**, and **build-up from the back.**
+
+---
+
+🏁 **Summary**
+> The tactical transformation of modern football demands **multifunctional, tactically intelligent players.** Coaches should train adaptability, scouts should find versatility, and analysts must redefine excellence based on evolving roles — because success no longer lies in specialization alone, but in **synchronized versatility.**
+
+## **Part 2 – The Making of Great Players**
 > ***This study focuses on in-game attributes only, not real-life performance metrics.***
 
-### **What main attributes make a great player?**
+### **What main attributes make great players?**
 
 > ***Analysis is based on player attributes in EA FIFA game data, which reflect a gamified interpretation of real-life performance.***
 """
@@ -887,10 +909,12 @@ plt.show()
  - **Pace and Physic** are also better – a great forward is not only a goal scorer but also has good physicality and speed.
 > ✅ *A Great Forward is a player with excellent scoring ability, good dribbling and coordination, and has the speed to break through to create breakthroughs.*
 
+---
+
 **Conclusion**
 > *In every position, the Top 5% players not only excel in a specific stat, but also have a **comprehensive and consistent performance**. The biggest difference between them and the rest lies in the core skills of each position – for example: Reflexes & Reactions for Goalkeepers, Passing & Dribbling for Midfielders or Shooting & Dribbing for Forwards. It is this **consistent excellence** that is the foundation for creating a great player in football.*
 
-### **What core attributes make a great player?**
+### **What core attributes make great players?**
 > ***Based on EA FIFA player attributes, what are the core features that distinguish top 5% players from the rest?***
 """
 
@@ -970,7 +994,7 @@ plt.ylabel('Attributes')
 plt.tight_layout()
 plt.show()
 
-""""What core attributes make a great player?"
+""""What core attributes make great players?"
 The most important attributes (by coefficient):
 - **Reactions (↑)** - Highest coefficient:
  - **The ability to react to second-ball situations in the match** is the most important factor that helps distinguish the top 5% players.
@@ -989,10 +1013,34 @@ The most important attributes (by coefficient):
 - **High speed**
 - **Role-specific skills – such as reflexes (GK), short passing (MF) or heading accuracy (FW)**
 
+---
+
 **Conclusion**
 > ***Apart from the goalkeeper position, which is a very special position in football, we can see that the most core attributes of a great player are all in the stats that serve the ability to attack and find goals. This means that a midfielder or forward who plays well will always have an advantage over a defender in the race for individual titles, which is absolutely true in modern football.***
 
-## **Part 3 - Market Pulse: Underrated vs Overrated**
+# 🎯 **Recommendations**
+
+👨‍🏫 **For Coaches**
+- **Develop Reactions & Ball Control early:** These are the most decisive attributes across all positions – crucial for quick decision-making and in-game adaptation.
+- **Train holistic skill sets:** Top players are consistent and well-rounded. Focus on building not just role-specific abilities (e.g. finishing for forwards) but also complementary ones (e.g. short passing, sprint speed, vision).
+- **Position-tailored development:** Prioritize reflexes and reactions for goalkeepers, short passing and dribbling for midfielders, and heading accuracy with sprint speed for forwards.
+
+🕵️‍♂️ **For Scouts**
+- **Target well-rounded performers:** Top 5% players are not just excellent in one metric, but show **consistency across multiple relevant attributes.**
+- **Reactions as a scouting filter:** High reaction scores can indicate a player’s ability to adapt, anticipate and influence critical moments.
+- **Use positional benchmarks:** Great players exhibit different attribute patterns per position – compare candidates within their roles, not across all.
+
+📊 **For Analysts**
+- **Refine model features by role:** Some attributes (like Positioning) may behave differently depending on position – models must account for such positional bias.
+- **Monitor performance consistency:** Shorter interquartile ranges in top players show lower variability. Use this to identify high-reliability profiles.
+- **Evaluate underrated players by multi-attribute comparison:** Look beyond high individual stats – focus on **combinations** that align with top-tier profiles.
+
+---
+
+**Key Insight:**
+> *What makes a great player is not just exceptional ability in one area, but the consistent excellence across the core demands of their position. Modern football increasingly rewards versatility, decision-making speed, and technique — all measurable through the right set of performance attributes.*
+
+## **💼 Part 3 - Market Pulse: Estimating Real-Life Player Value**
 
 ### **What factors greatly affect a player's value?**
 """
@@ -1117,10 +1165,13 @@ pos_group_dummies = pd.get_dummies(ff23_df['position_group'], prefix='', prefix_
 # Merge into original DataFrame
 ff23_df = pd.concat([ff23_df, pos_group_dummies], axis=1)
 
+# Remove N/A value in market_value_in_eur (6%)
+ff23_df = ff23_df[ff23_df['market_value_in_eur'].notna()]
+
 ff23_df.info(verbose=True)
 
 # Target variable
-y = ff23_df['value_eur']
+y = ff23_df['market_value_in_eur']
 
 # Factors
 cols_to_exclude = [
@@ -1166,16 +1217,19 @@ print(f"R²  : {r2_rf:.4f}")
 
 LR_RF_Comparison = pd.DataFrame({
     'Model': ['Linear Regression', 'Random Forest'],
-    'MAE': [2469849, 811567],
-    'RMSE': [4954150, 2351944],
-    'R²': [0.6620, 0.9238]
+    'MAE': [3210957, 1644806],
+    'RMSE': [5880733, 3952449],
+    'R²': [0.5402, 0.7923]
 })
 LR_RF_Comparison
 
-"""The comparison between **Linear Regression** and **Random Forest** clearly demonstrates the superiority of Random Forest:
-- The **MAE (Mean Absolute Error)** of Random Forest is only around **803k**, while Linear Regression is nearly **three times higher (~2.1 million)** → indicating that Random Forest predicts much closer to actual values.
-- The **RMSE (Root Mean Squared Error)** of Random Forest is **also almost half** that of Linear Regression **(2.3 million vs 4.6 million)** → confirming its ability to reduce large errors.
-- The **R² Score** of Random Forest reaches **0.9253**, showing that the model explains **92.53% of the variance** in the data, much higher than Linear Regression (**70.9%**).
+"""**✅ Random Forest excels**
+- With R² = 0.79, the Random Forest model **explains nearly 80% of the variation in player prices** → very good for real-world data with a lot of noise.
+- MAE ~ 1.64 million € is a fairly **low average error** compared to the market size (most mid-range players are in the 1–10 million € range).
+
+**⚠️ Simple Linear Regression and underfitting**
+- Only reaching R² = 0.54 → the linear model **ignores many nonlinear relationships**, not suitable for complex data characteristics such as football (many interacting factors, nonlinear).
+- High RMSE → poor sensitivity to outliers.
 
 👉 **Conclusion:** Random Forest outperforms Linear Regression across all three metrics and is especially suitable for predicting player values in a complex, non-linear dataset like FIFA.
 """
@@ -1196,20 +1250,20 @@ plt.axvline(0, color='black', linestyle='--')
 plt.tight_layout()
 plt.show()
 
-"""**Linear Regression:**
-- The error distribution is **wide and asymmetric**, with a noticeable right skew (indicating underestimation).
-- Some **large outliers on the positive side** → the model significantly **underpredicts the value of expensive players.**
-- The **long right tail** shows poor accuracy for high-value players.
+"""⚽ **Linear Regression:**
+- The error distribution is **wider** and shows a **clear right skew**, indicating many cases where the model **underpredicts player values**, especially for high-value players.
+- Presence of **large positive outliers**, where predicted values are much lower than the actual ones.
+- The distribution is not symmetrical → **the model struggles with complex or non-linear data.**
 
-**Random Forest:**
-- The error distribution is **more concentrated around 0** and **nearly symmetrical.**
-- The **sharp, narrow peak** indicates that most predictions are close to the actual values.
-- **Fewer outliers** → the model is more **stable and reliable**, regardless of player value.
+🌲 **Random Forest:**
+- The error distribution is **tightly concentrated around 0** and almost **symmetrical**, showing that most predictions are close to actual values.
+- **Sharp and tall peak**, indicating **high accuracy and consistency.**
+- Very few large outliers → the model **handles non-linearity and extreme values well.**
 
 ✅ **Conclusion:**
-- **Random Forest clearly outperforms Linear Regression** in terms of both accuracy and stability.
-- While Linear Regression is sensitive to outliers (especially high-value players), **Random Forest handles non-linear patterns more effectively.**
-- This demonstrates that **Linear Regression is not suitable for player value prediction**, whereas **Random Forest is a more reliable model for predicting** value_eur.
+- **Random Forest significantly outperforms** Linear Regression in terms of both accuracy and stability.
+- With a focused, balanced error distribution and fewer outliers, **Random Forest is a more reliable choice** for predicting real-world player values.
+- In contrast, **Linear Regression is highly sensitive to outliers** and unsuitable for modeling complex player valuation data.
 """
 
 # Factor Importance from Random Forest
@@ -1225,23 +1279,18 @@ plt.tight_layout()
 plt.show()
 
 """**Factor Importance Analysis (Top 20 Factors):**
+The graph shows the influence of features on **real-life player value**, as assessed by the **Random Forest model**.
+- **Potential** is the **dominant factor** with an importance coefficient of **over 0.6**, indicating that the **market values future development potential more than current skills** → This explains why **promising young talents** often have **very high transfer prices**.
+- **Wage** ranks **second** → Reflects a player’s **current role in the squad**, **recognition from the club**, and is **strongly correlated** with market value.
+- **Age** is the **third most important** feature → Shows that **younger players** are **valued higher** due to their **longer playing career** and **investment potential**.
+- **Mental & physical attributes** like composure, stamina, reactions, sprint_speed, acceleration, positioning and finishing appear prominently in the top 20 → These are **critical for midfielders and forwards**, who are **often more valuable** than defenders or goalkeepers.
 
-The chart illustrates the impact of input features on player value, as evaluated by the Random Forest model. The results reveal several key insights:
-- **Potential** is the most influential feature, accounting for over 50% of the total importance. This highlights the crucial role of future development in determining a player's market value, especially for younger talents.
-- **Movement Reactions** ranks second, indicating how quickly a player responds to in-game situations. This metric encapsulates real-time performance and is often associated with players who are consistent and impactful during matches.
-- **Wage (EUR)**, a clear financial indicator, reflects the relationship between a player's salary and market value. Players with higher wages often hold key roles within the squad and command higher transfer values.
-- Features related to **mentality and age** also demonstrate notable influence:
- - Variables such as **Mentality Composure** (calmness) and **Age** capture maturity and professional experience — both of which contribute to a player’s overall stability and market perception.
- - In contrast, **technical skills** such as ball control, sprint speed, and dribbling, while still relevant, carry lower importance weights compared to long-term strategic indicators.
+✅ **Summary Insight:**
+> **Long-term and strategic factors** — such as **potential**, **salary**, **age**, **fitness**, and **composure** — have **much greater influence** than pure technical skills in determining player value.
 
-**Overall Insight**
-> **Strategic and long-term factors (e.g., potential, reactions, wage, age) outweigh pure technical abilities** in determining player value. This reflects a broader market perspective that emphasizes future value and consistency over short-term technical performance.
+⚽ This reflects the modern transfer market's mindset: **Don’t just buy current ability — invest in future growth**, as **technical attributes can develop through match experience**.
 
-**Conclusion**
-
-**A player's market value is not solely based on current skill levels but is significantly shaped by their growth potential, tactical responsiveness, wage level, and accumulated experience. This suggests that clubs and transfer markets assess players holistically, giving priority to attributes that reflect long-term investment and strategic value.**
-
-### **Is a player overrated or underrated?**
+### **Can we use in-game attributes to approximate real-world player value?**
 """
 
 X.columns
@@ -1257,137 +1306,127 @@ plt.grid(True, linestyle='--', alpha=0.5)
 plt.tight_layout()
 plt.show()
 
-"""- The points distributed close to the diagonal indicate that the Random Forest model learns the relationship between the features and the player value quite effectively.
-- Compared to Linear Regression – which produces larger systematic errors and is difficult to capture nonlinear relationships – RF shows **better generalization ability.**
-- Although there is still an **underestimation** phenomenon with extremely high-value players (due to lack of data or special factors), the results are generally **stable and reliable**.
+"""- Most points are closely aligned along the **diagonal line**, suggesting that the model captures the underlying **relationships between features and market value** quite well.
+- Compared to traditional models like **Linear Regression**, which often fail to model **nonlinear patterns** and produce systematic errors, **Random Forest** shows **stronger performance and generalization ability.**
+- However, we observe a **consistent underestimation** for players with **extremely high values** (e.g., above €100M).
+→ This may stem from **data imbalance** or the presence of **intangible factors** (e.g., media hype, brand value) that aren't fully captured by the model.
 """
 
-# ========== Underrated / Overrated Players ==========
+# ========== Predicted vs Real Market Value Comparison ==========
 
-# Prepare predict table
+# Copy X_test and add predicted values
 X_test_copy = X_test.copy()
 X_test_copy['predicted_value'] = y_pred_rf
 X_test_copy['player_id'] = X_test_copy.index
 
-# Merge with table containing market_value_in_eur and player information
+# Merge with player info & market value from full df
 cols_to_merge = ['player_id', 'short_name', 'date_of_birth', 'club_name', 'overall',
                  'pace', 'shooting', 'dribbling', 'passing', 'defending', 'physic',
-                 'position', 'nationality_name', 'value_eur', 'market_value_in_eur']
+                 'position', 'position_group', 'nationality_name', 'value_eur', 'market_value_in_eur']
 
 X_test_full = X_test_copy.merge(ff23_df[cols_to_merge], on='player_id', how='left')
 
-# Eliminate players with no real market value
+# Remove players with no market value
 X_test_full = X_test_full[X_test_full['market_value_in_eur'].notna()]
 
-# Calculate error between predicted and real value
-X_test_full['error'] = X_test_full['predicted_value'] - X_test_full['market_value_in_eur']
+# Calculate value gap (model - market)
+X_test_full['value_gap'] = X_test_full['predicted_value'] - X_test_full['market_value_in_eur']
 
-# Filter: only keep players with error < 40,000,000
-X_test_full = X_test_full[X_test_full['error'] < 40000000]
+# Top 10 overestimated (Model >> Market)
+over_df = X_test_full[X_test_full['value_gap'] > 0]
+over_top = over_df.loc[over_df.groupby('short_name')['value_gap'].idxmax()]
+top_over = over_top.sort_values(by='value_gap', ascending=False).head(10)
 
-# Filter rows with sufficient information
-X_test_full = X_test_full[X_test_full['short_name'].notna() & X_test_full['overall'].notna()]
+# Top 10 underestimated (Model << Market)
+under_df = X_test_full[X_test_full['value_gap'] < 0]
+under_top = under_df.loc[under_df.groupby('short_name')['value_gap'].idxmin()]
+top_under = under_top.sort_values(by='value_gap').head(10)
 
-# UNDERRATED: predicted > real => error > 0
-underrated_df = X_test_full[X_test_full['error'] > 0]
-underrated_top = underrated_df.loc[underrated_df.groupby('short_name')['error'].idxmax()]
-top_underrated = underrated_top.sort_values(by='error', ascending=False).head(10)
+# 📊 Display
+print("🔍 Top 10: Market Value Overestimated by the Model")
+display(top_over[['short_name', 'date_of_birth', 'nationality_name', 'club_name', 'position', 'pace',
+                  'overall', 'shooting', 'passing', 'dribbling', 'defending', 'physic',
+                  'predicted_value', 'market_value_in_eur', 'value_gap']])
 
-# OVERRATED: predicted < real => error < 0
-overrated_df = X_test_full[X_test_full['error'] < 0]
-overrated_top = overrated_df.loc[overrated_df.groupby('short_name')['error'].idxmin()]
-top_overrated = overrated_top.sort_values(by='error').head(10)
+print("🔍 Top 10: Market Value Underestimated by the Model")
+display(top_under[['short_name', 'date_of_birth', 'nationality_name', 'club_name', 'position', 'pace',
+                  'overall', 'shooting', 'passing', 'dribbling', 'defending', 'physic',
+                  'predicted_value', 'market_value_in_eur', 'value_gap']])
 
-# Display result
-print("TOP 10 OVERRATED Players (Model value > Market value):")
-display(top_underrated[[
-    'short_name', 'date_of_birth', 'nationality_name', 'club_name', 'position', 'overall',
-    'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic',
-    'predicted_value', 'market_value_in_eur', 'error'
-]])
+# Chart 1 – Overestimated
+plot_over = top_over.copy().sort_values(by='value_gap', ascending=True)
+plot_over['value_gap_mil'] = plot_over['value_gap'] / 1e6
+plot_over['label'] = plot_over['short_name'] + ' (' + plot_over['position_group'] + ')'
 
-print("TOP 10 UNDERRATED Players (Model value < Market value):")
-display(top_overrated[[
-    'short_name', 'date_of_birth', 'nationality_name', 'club_name', 'position', 'overall',
-    'pace', 'shooting', 'passing', 'dribbling', 'defending', 'physic',
-    'predicted_value', 'market_value_in_eur', 'error'
-]])
-
-# Prepare data
-underrated_plot = top_underrated.sort_values(by='error', ascending=True).copy()
-underrated_plot['error_million'] = underrated_plot['error'] / 1e6
-
-# Add position info into player name
-underrated_plot = underrated_plot.merge(ff23_df[['player_id', 'position_group']], on='player_id', how='left')
-underrated_plot['name_position'] = underrated_plot['short_name'] + ' (' + underrated_plot['position_group'] + ')'
-
-# Draw chart
 plt.figure(figsize=(10, 6))
-sns.barplot(data=underrated_plot, x='error_million', y='name_position', color='green')
-
-plt.title("Top 10 Overrated Players (Model > Market)", fontsize=14)
-plt.xlabel("Value Overestimated by Model (Million EUR)")
+sns.barplot(data=plot_over, x='value_gap_mil', y='label', color='orange')
+plt.axvline(0, color='black', linestyle='--')
+plt.title("Top 10: Market Value Overestimated by the Model")
+plt.xlabel("Model - Market Value (Million EUR)")
 plt.ylabel("")
-plt.grid(axis='x', linestyle='--', alpha=0.5)
 plt.tight_layout()
 plt.show()
 
-# Prepare data
-overrated_plot = top_overrated.sort_values(by='error', ascending=True).copy()
-overrated_plot['error_million'] = overrated_plot['error'] / 1e6
+"""🔶 **Overestimated Players (Model > Market)**
 
-# Add position info into player name
-overrated_plot = overrated_plot.merge(ff23_df[['player_id', 'position_group']], on='player_id', how='left')
-overrated_plot['name_position'] = overrated_plot['short_name'] + ' (' + overrated_plot['position_group'] + ')'
+The chart highlights players whose **model-predicted values are significantly higher than their actual market prices.** This may occur due to:
+- Strong in-game attributes but players are past their prime.
+- The model not fully capturing off-pitch factors such as age, recent form, injury history, or transfer context.
+- Real-world valuations being influenced by media hype, club strategy, or market trends.
+> This suggests that while the model recognizes technical and physical potential, **the real market applies additional filters** beyond data-driven attributes.
+"""
 
-# Draw chart
+# Chart 2 – Underestimated
+plot_under = top_under.copy().sort_values(by='value_gap', ascending=True)
+plot_under['value_gap_mil'] = plot_under['value_gap'] / 1e6
+plot_under['label'] = plot_under['short_name'] + ' (' + plot_under['position_group'] + ')'
+
 plt.figure(figsize=(10, 6))
-sns.barplot(data=overrated_plot, x='error_million', y='name_position', color='red')
-
-plt.title("Top 10 Underrated Players (Model < Market)", fontsize=14)
-plt.xlabel("Value Overestimated (Million EUR)")
+sns.barplot(data=plot_under, x='value_gap_mil', y='label', color='green')
+plt.axvline(0, color='black', linestyle='--')
+plt.title("Top 10: Market Value Underestimated by the Model")
+plt.xlabel("Model - Market Value (Million EUR)")
 plt.ylabel("")
-plt.grid(axis='x', linestyle='--', alpha=0.5)
 plt.tight_layout()
 plt.show()
 
-"""**Analysis of Overrated & Underrated Players**
+"""🟩 **Underestimated Players (Model < Market)**
 
-The chart highlights top 10 players whose market values are either significantly higher (overrated) or lower (underrated) than their predicted values based on a Random Forest valuation model.
+Notably, Cristiano Ronaldo appears here — the model significantly undervalues him compared to the market. Possible reasons include:
+- The model lacks variables reflecting global popularity, brand value, and commercial impact.
+- Market value reflects not only technical ability but also **off-the-field influence**, fan engagement, and legacy.
+> This reinforces that **predictive models need to integrate both quantitative and qualitative dimensions** to align better with real-life dynamics.
 
-**Key Insights:**
+---
 
-**🟩 Underrated Players – Smart Transfer Opportunities**
+✅ **Conclusion**
 
-Underrated players have predicted values that are significantly higher than their current market prices. This presents an excellent opportunity for clubs to acquire talents **at a lower cost than their true worth**, making it especially valuable for clubs with limited budgets or long-term investment strategies.
-Such players often share one or more of the following characteristics:
-- **High development potential** that has not yet been fully realized.
-- **Outstanding performance** that exceeds expectations but has not garnered media attention.
-- Playing for **smaller clubs**, which may lead to underappreciation in the market.
-> **Practical Application:** Clubs can use this insight to identify **hidden gems**, secure undervalued signings, and optimize transfer spending — gaining both **competitive edge on the pitch** and **financial efficiency** off it.
+The Random Forest model provides an **objective, attribute-based estimation** of a player's value on the market.
 
-**🟥 Overrated Players – Investment Risks**
+However, the discrepancies between predicted and real-life values reveal:
+- The model excels at assessing technical and physical ability.
+- It struggles with intangible elements like reputation, media perception, or commercial value.
 
-In contrast, overrated players have market values that **exceed their predicted worth**, suggesting they may be **overhyped by media, inconsistent in performance, pursued by multiple clubs, or paid excessively relative to their actual impact.**
-> **Practical Application:** Early identification of overrated players allows clubs to **avoid risky or overpriced transfers, negotiate more realistic transfer fees** for targets, and **reevaluate salary structures** or **transfer decisions** based on true value rather than perception.
+This misalignment is not a flaw — it’s an opportunity for deeper analysis.
 
-**Conclusion:**
-The Overrated – Underrated analysis is not just a data exercise — it's a **strategic tool** in scouting, recruitment, and transfer planning. By leveraging data-driven valuation models, clubs can:
-- Identify **high-potential transfer targets** at fair or bargain prices.
-- Minimize **financial risks** associated with overpaying.
-- Optimize **human resource investment** based on objective performance indicators rather than subjective bias or media influence.
+# **Recommendations**
+Based on the findings from the Random Forest model and the comparison between predicted and actual market values, we propose several recommendations for key stakeholders involved in player scouting, valuation, and decision-making.
 
-**📌 Recommendations for Clubs & Transfer Analysts:**
-- **Integrate Predictive Valuation into Scouting Pipelines**
-Use machine learning-based valuation as a standard filter when evaluating new player targets. This enables **early identification of undervalued talent and helps prioritize recruitment efforts.**
-- **Build a "Watchlist" of Underrated Players**
-Maintain a dynamic list of players flagged by the model as underrated. These could be **ideal transfer targets** for clubs with long-term planning, youth development focus, or financial limitations.
-- **Avoid Overpaying Through Objective Benchmarks**
-Before finalizing high-profile signings, use predicted valuations to **benchmark against hype-driven market prices**, minimizing the risk of signing **overpriced or underperforming players.**
-- **Strengthen Negotiation Leverage**
-Data-backed insights on overvaluation can be a **powerful negotiation tool**, helping clubs argue for lower transfer fees or structured payment plans based on actual performance.
-- **Combine Model Output with Human Expertise**
-While predictive models offer quantitative power, they should **complement, not replace**, the work of scouts and analysts. A hybrid approach—balancing data with tactical fit, attitude, and injury history—yields the best decisions.
-> ⚽ **Final Thought:**
-In an era where **transfer decisions can define a club's future**, embracing data-driven valuation isn't just a competitive advantage — it's a **necessity for modern football success.**
+**1. For Clubs and Scouting Departments:**
+- Clubs should broaden their evaluation framework by prioritizing **long-term and strategic indicators** such as **player potential, physical fitness**, and **mental attributes**, rather than relying solely on current technical ability.
+- Talented young players with high potential are often **undervalued in the market**, representing **high-return investment opportunities** if identified and signed early.
+- The model can serve as a **data-driven scouting assistant**, helping clubs to uncover **underrated players** whose in-game attributes suggest higher future value.
+
+**2. For Football Data Analysts:**
+- Future models should consider integrating **off-pitch factors** such as **media impact, commercial value, injury history**, and **recent form**, which significantly influence real-world transfer fees.
+- Discrepancies between predicted and actual values should be viewed as **anomaly indicators**, highlighting cases where players might be mispriced and warrant further qualitative analysis.
+- These insights can contribute to building **interactive dashboards** that blend quantitative model outputs with expert scouting reports for more balanced and strategic decision-making.
+
+**3. For Club Executives and Investors:**
+- Transfer decisions should not be overly influenced by **brand value or name recognition**, especially when these elements are not reflected in technical or physical performance.
+- Model predictions can provide a **reference point during transfer negotiations**, helping clubs avoid overpaying based on market hype or pressure.
+- Investing in **young, high-potential players** not only aligns with model recommendations but also supports long-term club growth and financial sustainability.
+
+**Final Through**
+>The model is not designed to replace human judgment in scouting but rather to act as a **decision support tool.** When combined with expert insights and qualitative assessments, such models can significantly enhance a club’s ability to operate efficiently in a **highly competitive and dynamic transfer market.**
 """
