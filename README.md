@@ -3,14 +3,14 @@
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/%E2%9A%BD.jpg)
 
 # Introdution
-Football is known as “the king game” because of its enduring appeal throughout history. Today, as technology permeates modern football, data analytics has become an integral part of the sport, offering invaluable support to players, coaches, and decision-makers. By leveraging data, tactics can be optimized, player performance assessed more objectively, and strategic or transfer decisions made with greater precision. Against this backdrop, this project harnesses longitudinal data from EA SPORTS FIFA (now EA SPORTS FC) to analyze the evolution of tactical trends, uncover the attributes that define an outstanding player and evaluate the accuracy of market valuations. The findings aim to provide actionable insights for squad building and strategic development in contemporary football.
+Football is known as “the king game” because of its enduring appeal throughout history. Today, as technology permeates modern football, data analytics has become an integral part of the sport, offering invaluable support to players, coaches, and decision-makers. By leveraging data, tactics can be optimized, player performance assessed more objectively, and strategic or transfer decisions made with greater precision. Against this backdrop, this project harnesses longitudinal data from EA SPORTS FIFA (now EA SPORTS FC) to analyze the evolution of tactical trends, uncover the attributes that define outstanding players and estimate the value of a player in reality. The findings aim to provide actionable insights for squad building and strategic development in contemporary football.
 
 # 🎯 Purpose
 - To analyze the evolution of modern football using EA SPORTS FIFA in-game data and data from Transfermarkt, by exploring tactical trends, player development, and market valuation logic.
 - Analyzing tactical changes in modern football based on FIFA dataset from version 15 to 23 (2015 - 2023), through changes in player stats according to role, position and technical requirements.
 
 # 📈 Outcome
-A comprehensive analysis that uncovers modern tactical shifts, reveals factors behind great footballers, and highlights discrepancies between perceived and real-world player values. This can offer valuable insights for heah coach, managers and football analysts.
+A comprehensive analysis that uncovers modern tactical shifts, reveals factors behind great footballers, and highlights discrepancies between perceived and real-world player values. This can offer valuable insights for head coach, scouts and football analysts.
 
 # 🗂️ Project Structure
 - Part 1 - Tactical Shift Over Time
@@ -42,7 +42,6 @@ A comprehensive analysis that uncovers modern tactical shifts, reveals factors b
 - Python (pandas, numpy, matplotlib, seaborn, scikit-learn...).
 - Google Colab: using Python to load, process, clean, analyze data and build Machine Learning models and analyze features importance.
 - Google Slices: create slices for presentation.
-
 ## Technologies
 - Linear Regression
 - Logistic Regression
@@ -210,7 +209,7 @@ memory usage: 33.3+ MB
 ```
 
 - Here we don't need to fillna for the market_value_in_eur column because it is **the actual market value of Transfermarkt**, we need real data to evaluate underrated/overrated for part 3.
-- 5% missing is **acceptable**, we can filter out these rows when doing the final evaluation after building the model.
+- 5% missing is **acceptable**, we can drop these rows before performing model building and evaluate after model building.
 
 # 🔍 EXPLORATORY DATA ANALYSIS
 ## Dataset description
@@ -306,7 +305,7 @@ This correlation heatmap is useful for clustering player roles or building class
 
 # Part 1 - Tactical Shift Over Time
 
-![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/%E2%9A%BD%E2%9A%BD%E2%9A%BD.jpg)
+![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/%E2%9A%BD%E2%9A%BD.jpg)
 
 ## Which position has evolved the most in modern football?
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/MainAttrsbyPosOvertime.png)
@@ -342,12 +341,13 @@ Analyzing the evolution of average player attributes by position across FIFA edi
 > **Shows the emergence of complete midfielders – both offensive and defensive, and controlling the tempo of the match.**
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/FWAttrsOvertime.png)
+
 **Forwards in this period also had changes in their playing style:**
 - Slight increase in short passing and vision skills, showing the role of supporting attack coordination and connecting with the lines is increasingly clear.
 - Defensive indicators increased steadily and continuously from 2016 - 2023 (standing tackle, sliding tackle), especially marking awareness increased sharply from 2018 - 2019, reflecting the trend of strikers having to actively participate in high pressing/defending from a distance.
 > **Forwards in modern football are no longer "poachers" who just wait for the ball but are also the first link in the defensive system.**
 > 
-**Conclusion**
+**📌 Conclusion**
 > **In modern football, all positions have undergone significant evolution to adapt to increasingly complex tactical requirements and a higher pace of play. However, in terms of the ability to change and expand roles beyond traditional definitions, it can be said that the Goalkeeper (GK) and Defender (especially the full-back) are the two positions with the most obvious and revolutionary "evolution".**
 
 ## **What attributes of positions have changed significantly over the years?**
@@ -377,15 +377,36 @@ From this chart we can see that there has been a clear shift in the tactical met
 - The indicators such as **vision, long passing, short passing, reactions and marking awareness** are all in the top 10 with the strongest increase, which reflects the **synchronous pressing and escaping pressing style from many lines that requires the ability to control, pass the ball, catch people and react quickly**, a hallmark of in modern football.
 - The **goalkeeper's index** sets have also increased significantly over the years, showing that **goalkeepers must be more and more comprehensive and excellent** because in modern football, a save is no different from a goal, especially in big matches.
 
-**Conclusion**
+**📌 Conclusion**
 > **Football has always been in constant motion and change throughout its history, with increasingly high and complex tactical requirements, players also need to change to adapt, they are no longer constrained in traditional roles but are increasingly flexible and versatile.**
+
+### **Recommendations for Coaches, Scouts, and Football Analysts**
+
+**For Coaches**
+- **Integrate versatility into training philosophy:** Encourage players, especially defenders and midfielders, to develop skills beyond their traditional roles. For example, defenders should be trained in ball control and distribution, while midfielders should be drilled on defensive positioning and recovery.
+- **Tactical emphasis on collective pressing and transition play:** Build tactical systems that emphasize **press-resistance**, **quick transitions**, and **fluid positional play**, leveraging the modern player's broader skillset.
+- **Adapt to player evolution:** Utilize players who can operate in multiple systems and positions (e.g., inverted full-backs, hybrid midfielders), maximizing tactical flexibility against different opponents.
+
+**For Football Analysts**
+- **Update performance benchmarks by position:** Attribute baselines need to be adjusted as traditional roles have evolved. For instance, a modern centre-back’s passing stats may now be as critical as their tackling.
+- **Incorporate attribute evolution into player evaluations:** Use historical attribute trends to predict future value and role adaptability, especially for youth development and long-term squad planning.
+- **Quantify versatility impact:** Measure how players with higher cross-positional attributes contribute to team success, particularly in systems reliant on **fluid formations** or **total football principles.**
+
+**For Scouting & Recruitment**
+- **Target multi-dimensional profiles:** Prioritize scouting players who show high development in **non-traditional attributes** for their position (e.g., high Dribbling/Passing for defenders or high Defending for forwards).
+- **Track attribute trends to spot undervalued talent:** Use insights on emerging tactical requirements (e.g., pressing forwards or playmaking full-backs) to identify underrated players who may not stand out under older scouting criteria.
+- **Scout for cognitive & tactical intelligence:** Prioritize players with high vision, reaction, and marking awareness — key traits that support modern tactical systems like **gegenpressing, positional play**, and **build-up from the back.**
+
+🏁 **Summary**
+> The tactical transformation of modern football demands **multifunctional, tactically intelligent players.** Coaches should train adaptability, scouts should find versatility, and analysts must redefine excellence based on evolving roles — because success no longer lies in specialization alone, but in **synchronized versatility.**
+
 
 # **Part 2 – The Making of a Great Player**
 > ***This study focuses on in-game attributes only, not real-life performance metrics.***
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/Gullit.jpg)
 
-## **What main attributes make a great player?**
+## **What main attributes make great players?**
 > ***Analysis is based on player attributes in EA FIFA game data, which reflect a gamified interpretation of real-life performance.***
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/MainAttrsbyPos(5%25vsOthrs).png)
@@ -417,22 +438,22 @@ Now let's look at the boxplot representation of the distribution to see it more 
   - **Defending** is the most prominent strength, with the Top 5% having a median >80 compared to the rest of the group around ~65.
   - **Dribbling, Passing and Physic** also stand out, showing that today's top defenders are not only defensive but also participate in building play and competing strongly.
   - There is also a difference in **Pace** - speed is the factor that distinguishes normal defenders from top defenders.
->✅ *A Great Defender is not only good at defending but also has good speed, stamina and ball handling technique.*
+>✅ ***Great Defenders** is not only good at defending but also has good speed, stamina and ball handling technique.*
 - **Midfielders (MF):**
   - **Passing and Dribbling** are the two most distinguishing factors – Top 5% have excellent passing and dribbling abilities (~80 and above).
   - **Shooting, Defending and Physic** are also slightly better, showing that they are not only playmakers but can also defend or score directly when needed.
   - The difference in **pace** is less, a good midfielder does not need to be too fast.
-> ✅ *A Great Midfielder is a versatile player, capable of controlling the game with technique and physicality, while contributing to both attack and defense.*
+> ✅ ***Great Midfielders** is a versatile player, capable of controlling the game with technique and physicality, while contributing to both attack and defense.*
 - **Forwards (FW):**
   - **Shooting** is the most distinguishing factor – Top 5% have median >80, while the other group ~65.
   - **Dribbling and Passing** are also clearly superior, showing that ball handling and passing skills are core factors.
   - **Pace and Physic** are also better – a great forward is not only a goal scorer but also has good physicality and speed.
-> ✅ *A Great Forward is a player with excellent scoring ability, good dribbling and coordination, and has the speed to break through to create breakthroughs.*
+> ✅ ***Great Forwards** is a player with excellent scoring ability, good dribbling and coordination, and has the speed to break through to create breakthroughs.*
 
-**Conclusion**
+**📌 Conclusion**
 > *In every position, the Top 5% players not only excel in a specific stat, but also have a **comprehensive and consistent performance**. The biggest difference between them and the rest lies in the core skills of each position – for example: Reflexes & Reactions for Goalkeepers, Passing & Dribbling for Midfielders or Shooting & Dribbing for Forwards. It is this **consistent excellence** that is the foundation for creating a great player in football.*
 
-## **What core attributes make a great player?**
+## **What core attributes make great players?**
 > ***Based on FIFA player attributes, what are the core features that distinguish top 5% players from the rest?***
 > 
 - To analyze this we will use a logistic regression model to distinguish the great players (top 5%) from the rest.
@@ -446,13 +467,13 @@ Based on classification report and ROC Curve:
 - The model achieves: **Precision = 0.82** and **Recall = 0.71** for class 1 (top 5% excellent players), meaning the model correctly detects many "great" players, **limiting false positives relatively well.**
 - Note the imbalance of the data set: Class 1 only accounts for **about 6%** of the data set, this explains why Recall class 1 = 0.71, lower than class 0. However, **high precision** for class 1 is a positive point.
 
-> ✅ Logistic Regression Model Easy to understand, simple, shows very good efficiency in classifying "great players". Used to **determine the core attributes that make a great player** (via coefficients).
+> ✅ Logistic Regression Model Easy to understand, simple, shows very good efficiency in classifying "great players". Used to **determine the core attributes that make great players** (via coefficients).
 
 Next, we will analyze features importance via model and see which 15 features have the most impact.
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/LRCoffs-Top15Attrs.png)
 
-"What core attributes make a great player?"
+"What core attributes make great players?"
 The most important attributes (by coefficient):
 - **Reactions (↑)** - Highest coefficient:
  - **The ability to react to second-ball situations in the match** is the most important factor that helps distinguish the top 5% players.
@@ -474,7 +495,27 @@ The most important attributes (by coefficient):
 **Conclusion**
 > ***Apart from the goalkeeper position, which is a very special position in football, we can see that the most core attributes of a great player are all in the stats that serve the ability to attack and find goals. This means that a midfielder or forward who plays well will always have an advantage over a defender in the race for individual titles, which is absolutely true in modern football.***
 
-# **Part 3 - Market Pulse: Underrated vs Overrated**
+### **Recommendations**
+
+**For Coaches**
+- **Develop Reactions & Ball Control early:** These are the most decisive attributes across all positions – crucial for quick decision-making and in-game adaptation.
+- **Train holistic skill sets:** Top players are consistent and well-rounded. Focus on building not just role-specific abilities (e.g. finishing for forwards) but also complementary ones (e.g. short passing, sprint speed, vision).
+- **Position-tailored development:** Prioritize reflexes and reactions for goalkeepers, short passing and dribbling for midfielders, and heading accuracy with sprint speed for forwards.
+
+**For Scouts**
+- **Target well-rounded performers:** Top 5% players are not just excellent in one metric, but show **consistency across multiple relevant attributes.**
+- **Reactions as a scouting filter:** High reaction scores can indicate a player’s ability to adapt, anticipate and influence critical moments.
+- **Use positional benchmarks:** Great players exhibit different attribute patterns per position – compare candidates within their roles, not across all.
+
+**For Analysts**
+- **Refine model features by role:** Some attributes (like Positioning) may behave differently depending on position – models must account for such positional bias.
+- **Monitor performance consistency:** Shorter interquartile ranges in top players show lower variability. Use this to identify high-reliability profiles.
+- **Evaluate underrated players by multi-attribute comparison:** Look beyond high individual stats – focus on **combinations** that align with top-tier profiles.
+
+**✅ Key Insight:**
+> *What makes a great player is not just exceptional ability in one area, but the consistent excellence across the core demands of their position. Modern football increasingly rewards versatility, decision-making speed, and technique — all measurable through the right set of performance attributes.*
+
+# **Part 3 - Market Pulse: Estimating Real-Life Player Value**
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/%E2%9A%BD%E2%9A%BD%E2%9A%BD%E2%9A%BD.jpg)
 
@@ -526,94 +567,97 @@ With specific player dataset like FIFA's which has many attributes and is often 
 
 |index|Model|MAE|RMSE|R²|
 |---|---|---|---|---|
-|0|Linear Regression|2469849|4954150|0\.662|
-|1|Random Forest|811567|2351944|0\.9238|
+|0|Linear Regression|3210957|5880733|0\.5402|
+|1|Random Forest|1644806|3952449|0\.7923|
 
-After train 2 models and evaluate them we can see the comparison between **Linear Regression** and **Random Forest** clearly demonstrates the superiority of Random Forest:
-- The **MAE (Mean Absolute Error)** of Random Forest is only around **803k**, while Linear Regression is nearly **three times higher (~2.1 million)** → indicating that Random Forest predicts much closer to actual values.
-- The **RMSE (Root Mean Squared Error)** of Random Forest is **also almost half** that of Linear Regression **(2.3 million vs 4.6 million)** → confirming its ability to reduce large errors.
-- The **R² Score** of Random Forest reaches **0.9253**, showing that the model explains **92.53% of the variance** in the data, much higher than Linear Regression (**70.9%**).
+After train 2 models and evaluate them we can see the comparison between **Linear Regression** and **Random Forest**:
+**Random Forest excels**
+- With R² = 0.79, the Random Forest model **explains nearly 80% of the variation in player prices** → very good for real-world data with a lot of noise.
+- MAE ~ 1.64 million € is a fairly **low average error** compared to the market size (most mid-range players are in the 1–10 million € range).
 
-> 👉 Random Forest outperforms Linear Regression across all three metrics and is especially suitable for predicting player values in a complex, non-linear dataset like FIFA.
+**Simple Linear Regression and underfitting**
+- Only reaching R² = 0.54 → the linear model **ignores many nonlinear relationships**, not suitable for complex data characteristics such as football (many interacting factors, nonlinear).
+- High RMSE → poor sensitivity to outliers.
+
+>**Conclusion:** Random Forest outperforms Linear Regression across all three metrics and is especially suitable for predicting player values in a complex, non-linear dataset like FIFA.
 
 Next, we will evaluate 2 models based on error distribution:
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/CompareLR%26RF.png)
 
 **Linear Regression:**
-- The error distribution is **wide and asymmetric**, with a noticeable right skew (indicating underestimation).
-- Some **large outliers on the positive side** → the model significantly **underpredicts the value of expensive players.**
-- The **long right tail** shows poor accuracy for high-value players.
+- The error distribution is **wider** and shows a **clear right skew**, indicating many cases where the model **underpredicts player values**, especially for high-value players.
+- Presence of **large positive outliers**, where predicted values are much lower than the actual ones.
+- The distribution is not symmetrical → **the model struggles with complex or non-linear data.**
 
 **Random Forest:**
-- The error distribution is **more concentrated around 0** and **nearly symmetrical.**
-- The **sharp, narrow peak** indicates that most predictions are close to the actual values.
-- **Fewer outliers** → the model is more **stable and reliable**, regardless of player value.
+- The error distribution is **tightly concentrated around 0** and almost **symmetrical**, showing that most predictions are close to actual values.
+- **Sharp and tall peak**, indicating **high accuracy and consistency.**
+- Very few large outliers → the model **handles non-linearity and extreme values well.**
 
-✅ **Conclusion:**
-- **Random Forest clearly outperforms Linear Regression** in terms of both accuracy and stability.
-- While Linear Regression is sensitive to outliers (especially high-value players), **Random Forest handles non-linear patterns more effectively.**
-- This demonstrates that **Linear Regression is not suitable for player value prediction**, whereas **Random Forest is a more reliable model for predicting** value_eur.
+**📌 Conclusion:**
+- **Random Forest significantly outperforms** Linear Regression in terms of both accuracy and stability.
+- With a focused, balanced error distribution and fewer outliers, **Random Forest is a more reliable choice** for predicting real-world player values.
+- In contrast, **Linear Regression is highly sensitive to outliers** and unsuitable for modeling complex player valuation data.
 
 And now we can analyze features importance based on Random Forest model:
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/Top20Factors(RF).png)
 
 **Factor Importance Analysis (Top 20 Factors):**
+The graph shows the influence of features on **real-life player value**, as assessed by the **Random Forest model**.
+- **Potential** is the **dominant factor** with an importance coefficient of **over 0.6**, indicating that the **market values future development potential more than current skills** → This explains why **promising young talents** often have **very high transfer prices**.
+- **Wage** ranks **second** → Reflects a player’s **current role in the squad**, **recognition from the club**, and is **strongly correlated** with market value.
+- **Age** is the **third most important** feature → Shows that **younger players** are **valued higher** due to their **longer playing career** and **investment potential**.
+- **Mental & physical attributes** like composure, stamina, reactions, sprint_speed, acceleration, positioning and finishing appear prominently in the top 20 → These are **critical for midfielders and forwards**, who are **often more valuable** than defenders or goalkeepers.
 
-The chart illustrates the impact of input features on player value, as evaluated by the Random Forest model. The results reveal several key insights:
-- **Potential** is the most influential feature, accounting for over 50% of the total importance. This highlights the crucial role of future development in determining a player's market value, especially for younger talents.
-- **Movement Reactions** ranks second, indicating how quickly a player responds to in-game situations. This metric encapsulates real-time performance and is often associated with players who are consistent and impactful during matches.
-- **Wage (EUR)**, a clear financial indicator, reflects the relationship between a player's salary and market value. Players with higher wages often hold key roles within the squad and command higher transfer values.
-- Features related to **mentality and age** also demonstrate notable influence:
- - Variables such as **Mentality Composure** (calmness) and **Age** capture maturity and professional experience — both of which contribute to a player’s overall stability and market perception.
- - In contrast, **technical skills** such as ball control, sprint speed, and dribbling, while still relevant, carry lower importance weights compared to long-term strategic indicators.
+✅ **Summary Insight:**
+> **Long-term and strategic factors** — such as **potential**, **salary**, **age**, **fitness**, and **composure** — have **much greater influence** than pure technical skills in determining player value.
 
-**Overall Insight**
-> **Strategic and long-term factors (e.g., potential, reactions, wage, age) outweigh pure technical abilities** in determining player value. This reflects a broader market perspective that emphasizes future value and consistency over short-term technical performance.
+⚽ This reflects the modern transfer market's mindset: **Don’t just buy current ability — invest in future growth**, as **technical attributes can develop through match experience**.
 
-**Conclusion**
-**A player's market value is not solely based on current skill levels but is significantly shaped by their growth potential, tactical responsiveness, wage level, and accumulated experience. This suggests that clubs and transfer markets assess players holistically, giving priority to attributes that reflect long-term investment and strategic value.**
-
-## **Is a player overrated or underrated?**
+## **Can we use in-game attributes to approximate real-world player value?**
 
 Before analyzing this we will evaluate a little more about RF model:
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/EvaluateRF.png)
 
-- The points distributed close to the diagonal indicate that the Random Forest model learns the relationship between the features and the player value quite effectively.
-- Compared to Linear Regression – which produces larger systematic errors and is difficult to capture nonlinear relationships – RF shows **better generalization ability.**
-- Although there is still an **underestimation** phenomenon with extremely high-value players (due to lack of data or special factors), the results are generally **stable and reliable**.
+- Most points are closely aligned along the **diagonal line**, suggesting that the model captures the underlying **relationships between features and market value** quite well.
+- Compared to traditional models like **Linear Regression**, which often fail to model **nonlinear patterns** and produce systematic errors, **Random Forest** shows **stronger performance and generalization ability.**
+- However, we observe a **consistent underestimation** for players with **extremely high values** (e.g., above €100M).
+→ This may stem from **data imbalance** or the presence of **intangible factors** (e.g., media hype, brand value) that aren't fully captured by the model.
 
-Now we can show the TOP 10 Overrated Players:
+Now we can show the Top 10 Market Value Overestimated by the Model:
 
-|index|short\_name|date\_of\_birth|nationality\_name|club\_name|position|overall|pace|shooting|passing|dribbling|defending|physic|predicted\_value|market\_value\_in\_eur|error|
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|4981|T\. Huddlestone|1986-12-28 00:00:00|England|Hull City|Midfield|75\.0|46\.0|70\.0|81\.0|67\.0|72\.0|73\.0|2766000\.0|6000000\.0|-3234000\.0|
-|11646|H\. Westermann|1983-08-14 00:00:00|Germany|Hamburger SV|Defender|75\.0|67\.0|54\.0|65\.0|57\.0|76\.0|78\.0|353650\.0|1625000\.0|-1271350\.0|
-|678|M\. Bodmer|1982-11-22 00:00:00|France|OGC Nice|Midfield|74\.0|57\.0|64\.0|69\.0|63\.0|75\.0|78\.0|454100\.0|1500000\.0|-1045900\.0|
-|11656|B\. Myhill|1982-11-09 00:00:00|Wales|West Bromwich Albion|Goalkeeper|72\.0|77\.0|35\.0|54\.5|62\.0|66\.5|78\.5|1081500\.0|2000000\.0|-918500\.0|
-|3658|L\. Wilkshire|1981-10-02 00:00:00|Australia|Feyenoord|Defender|71\.0|70\.0|61\.0|65\.0|63\.0|68\.0|73\.0|591750\.0|1500000\.0|-908250\.0|
-|6596|Rúben Fernandes|1986-05-06 00:00:00|Portugal|Estoril Praia|Defender|73\.0|70\.0|47\.0|55\.0|55\.0|74\.0|73\.0|1115000\.0|2000000\.0|-885000\.0|
-|6712|A\. Gilardino|1982-07-05 00:00:00|Italy|Palermo|Attack|74\.0|62\.0|73\.0|61\.0|70\.0|29\.0|66\.0|119600\.0|1000000\.0|-880400\.0|
-|7641|J\. Collins|1983-08-23 00:00:00|Wales|West Ham United|Defender|74\.0|42\.0|48\.0|53\.0|45\.0|73\.0|78\.0|1250150\.0|2000000\.0|-749850\.0|
-|10298|S\. Kehl|1980-02-13 00:00:00|Germany|Borussia Dortmund|Midfield|78\.0|49\.0|62\.0|69\.0|66\.0|79\.0|76\.0|314750\.0|1000000\.0|-685250\.0|
-|8310|G\. Holt|1981-04-12 00:00:00|England|Wigan Athletic|Attack|69\.0|37\.0|73\.0|63\.0|62\.0|46\.0|79\.0|489600\.0|750000\.0|-260400\.0|
+| short_name       | date_of_birth | nationality_name | club_name               | position  | pace | overall | shooting | passing | dribbling | defending | physic | predicted_value | market_value_in_eur | value_gap      |
+|------------------|---------------|------------------|-------------------------|-----------|------|---------|----------|---------|-----------|-----------|--------|------------------|----------------------|----------------|
+| D. Butterfield   | 1979-11-21    | England          | Exeter City             | Defender  | 40.0 | 60.0    | 38.0     | 60.0    | 55.0      | 63.0      | 60.0   | 63,439,500       | 50,000               | 63,389,500      |
+| E. Adebayor      | 1984-02-26    | Togo             | İstanbul Başakşehir FK  | Attack    | 69.0 | 79.0    | 76.0     | 66.0    | 71.0      | 32.0      | 73.0   | 44,543,000       | 775,000              | 43,768,000      |
+| M. Rasmussen     | 1985-01-31    | Denmark          | Pogoń Szczecin          | Attack    | 47.0 | 66.0    | 68.0     | 48.0    | 54.0      | 34.0      | 71.0   | 33,482,500       | 150,000              | 33,332,500      |
+| A. Diarra        | 1981-07-15    | France           | AS Nancy Lorraine       | Midfield  | 48.0 | 73.0    | 59.0     | 64.0    | 63.0      | 71.0      | 68.0   | 26,101,333       | 325,000              | 25,776,333      |
+| G. Caldwell      | 1982-04-12    | Scotland         | Wigan Athletic          | Defender  | 37.0 | 70.0    | 33.0     | 54.0    | 55.0      | 70.0      | 73.0   | 25,489,167       | 500,000              | 24,989,167      |
+| M. Brown         | 1981-02-28    | Scotland         | Ross County FC          | Goalkeeper| 77.0 | 58.0    | 35.0     | 54.5    | 62.0      | 66.5      | 78.5   | 16,893,750       | 225,000              | 16,668,750      |
+| F. Malouda       | 1980-06-13    | France           | FC Metz                 | Attack    | 70.0 | 77.0    | 76.0     | 76.0    | 80.0      | 30.0      | 72.0   | 15,608,667       | 750,000              | 14,858,667      |
+| J. Kristiansen   | 1981-08-04    | Denmark          | FC Vestsjælland         | Midfield  | 63.0 | 68.0    | 65.0     | 68.0    | 65.0      | 64.0      | 80.0   | 14,504,750       | 175,000              | 14,329,750      |
+| P. Jagielka      | 1982-08-17    | England          | Stoke City              | Defender  | 32.0 | 70.0    | 45.0     | 55.0    | 52.0      | 72.0      | 63.0   | 11,495,750       | 200,000              | 11,295,750      |
+| E. Belözoğlu     | 1980-09-07    | Turkey           | İstanbul Başakşehir FK  | Midfield  | 45.0 | 79.0    | 72.0     | 85.0    | 78.0      | 63.0      | 69.0   | 10,184,667       | 387,500              | 9,797,167       |
 
-And TOP 10 Underrated Players:
 
-|index|short\_name|date\_of\_birth|nationality\_name|club\_name|position|overall|pace|shooting|passing|dribbling|defending|physic|predicted\_value|market\_value\_in\_eur|error|
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|3870|E\. Adebayor|1984-02-26 00:00:00|Togo|İstanbul Başakşehir FK|Attack|79\.0|69\.0|76\.0|66\.0|71\.0|32\.0|73\.0|37805000\.0|775000\.0|37030000\.0|
-|7371|M\. Brown|1981-02-28 00:00:00|Scotland|Ross County FC|Goalkeeper|58\.0|77\.0|35\.0|54\.5|62\.0|66\.5|78\.5|23990000\.0|225000\.0|23765000\.0|
-|6637|C\. Gordon|1982-12-31 00:00:00|Scotland|Hearts|Goalkeeper|74\.0|77\.0|35\.0|54\.5|62\.0|66\.5|78\.5|23997000\.0|300000\.0|23697000\.0|
-|3789|J\. Van Damme|1983-10-10 00:00:00|Belgium|Royal Antwerp FC|Defender|71\.0|62\.0|60\.0|67\.0|61\.0|73\.0|86\.0|18280000\.0|250000\.0|18030000\.0|
-|7087|E\. Belözoğlu|1980-09-07 00:00:00|Turkey|İstanbul Başakşehir FK|Midfield|79\.0|45\.0|72\.0|85\.0|78\.0|63\.0|69\.0|16130000\.0|387500\.0|15742500\.0|
-|4662|T\. Manfredini|1980-05-27 00:00:00|Italy|Vicenza|Defender|74\.0|53\.0|33\.0|47\.0|53\.0|78\.0|67\.0|14589000\.0|50000\.0|14539000\.0|
-|13034|G\. O'Neil|1983-05-18 00:00:00|England|Bristol City|Midfield|69\.0|52\.0|64\.0|70\.0|68\.0|63\.0|70\.0|10344000\.0|500000\.0|9844000\.0|
-|6760|F\. Malouda|1980-06-13 00:00:00|France|FC Metz|Attack|77\.0|70\.0|76\.0|76\.0|80\.0|30\.0|72\.0|9951000\.0|750000\.0|9201000\.0|
-|8746|N\. Rafael|1984-01-10 00:00:00|Angola|VfL Bochum 1848|Attack|67\.0|64\.0|64\.0|59\.0|68\.0|50\.0|69\.0|7671000\.0|250000\.0|7421000\.0|
-|1576|G\. Greer|1980-12-14 00:00:00|Scotland|Kilmarnock|Defender|67\.0|30\.0|28\.0|53\.0|49\.0|67\.0|63\.0|7329000\.0|200000\.0|7129000\.0|
+And TOP 10 Market Value Underestimated by the Model:
+
+| short_name           | date_of_birth | nationality_name | club_name             | position   | pace | overall | shooting | passing | dribbling | defending | physic | predicted_value | market_value_in_eur | value_gap         |
+|----------------------|---------------|------------------|-----------------------|------------|------|---------|----------|---------|-----------|-----------|--------|------------------|----------------------|--------------------|
+| Cristiano Ronaldo    | 1985-02-05    | Portugal         | Real Madrid CF        | Attack     | 93.0 | 92.0    | 93.0     | 81.0    | 91.0      | 32.0      | 79.0   | 478,938          | 116,666,667          | -116,187,729       |
+| T. Huddlestone       | 1986-12-28    | England          | Hull City             | Midfield   | 46.0 | 75.0    | 70.0     | 81.0    | 67.0      | 72.0      | 73.0   | 962,608          | 6,000,000            | -5,037,392         |
+| K. Nolan             | 1982-06-24    | England          | West Ham United       | Midfield   | 52.0 | 75.0    | 77.0     | 73.0    | 70.0      | 63.0      | 81.0   | 1,001,208        | 3,000,000            | -1,998,792         |
+| A. Isaksson          | 1981-10-03    | Sweden           | Kasimpaşa SK          | Goalkeeper | 77.0 | 74.0    | 35.0     | 54.5    | 62.0      | 66.5      | 78.5   | 285,042          | 1,750,000            | -1,464,958         |
+| R. Santa Cruz        | 1981-08-16    | Paraguay         | Málaga CF             | Attack     | 49.0 | 76.0    | 74.0     | 63.0    | 66.0      | 33.0      | 76.0   | 592,375          | 1,250,000            | -657,625           |
+| M. Lehmann           | 1983-05-28    | Germany          | 1. FC Köln            | Midfield   | 52.0 | 72.0    | 68.0     | 69.0    | 68.0      | 68.0      | 77.0   | 260,833          | 750,000              | -489,167           |
+| A. Madlung           | 1982-07-11    | Germany          | Eintracht Frankfurt   | Defender   | 29.0 | 74.0    | 48.0     | 49.0    | 34.0      | 75.0      | 82.0   | 473,650          | 800,000              | -326,350           |
+| O. Deschacht         | 1981-02-16    | Belgium          | RSC Anderlecht        | Defender   | 65.0 | 70.0    | 40.0     | 58.0    | 54.0      | 72.0      | 71.0   | 701,604          | 1,000,000            | -298,396           |
+| S. Hammell           | 1982-02-18    | Scotland         | Motherwell            | Defender   | 70.0 | 68.0    | 39.0     | 63.0    | 63.0      | 66.0      | 80.0   | 240,417          | 400,000              | -159,583           |
+| J. ten Rouwelaar     | 1980-12-24    | Netherlands      | NAC Breda             | Goalkeeper | 77.0 | 70.0    | 35.0     | 54.5    | 62.0      | 66.5      | 78.5   | 257,438          | 400,000              | -142,563           |
+
 
 We can display as barplot:
 
@@ -621,45 +665,49 @@ We can display as barplot:
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/Top10UnderPlayers.png)
 
-**Analysis of Overrated & Underrated Players**
+**Overestimated Players (Model > Market)**
+The chart highlights players whose **model-predicted values are significantly higher than their actual market prices.** This may occur due to:
+- Strong in-game attributes but players are past their prime.
+- The model not fully capturing off-pitch factors such as age, recent form, injury history, or transfer context.
+- Real-world valuations being influenced by media hype, club strategy, or market trends.
+> This suggests that while the model recognizes technical and physical potential, **the real market applies additional filters** beyond data-driven attributes.
 
-The chart highlights top 10 players whose market values are either significantly higher (overrated) or lower (underrated) than their predicted values based on a Random Forest valuation model.
+**Underestimated Players (Model < Market)**
+Notably, Cristiano Ronaldo appears here — the model significantly undervalues him compared to the market. Possible reasons include:
+- The model lacks variables reflecting global popularity, brand value, and commercial impact.
+- Market value reflects not only technical ability but also **off-the-field influence**, fan engagement, and legacy.
+> This reinforces that **predictive models need to integrate both quantitative and qualitative dimensions** to align better with real-life dynamics.
 
-**Key Insights:**
+✅ **Conclusion**
 
-**🟥 Underrated Players – Smart Transfer Opportunities**
+The Random Forest model provides an **objective, attribute-based estimation** of a player's value on the market.
 
-Underrated players have predicted values that are significantly higher than their current market prices. This presents an excellent opportunity for clubs to acquire talents **at a lower cost than their true worth**, making it especially valuable for clubs with limited budgets or long-term investment strategies.
-Such players often share one or more of the following characteristics:
-- **High development potential** that has not yet been fully realized.
-- **Outstanding performance** that exceeds expectations but has not garnered media attention.
-- Playing for **smaller clubs**, which may lead to underappreciation in the market.
-> **Practical Application:** Clubs can use this insight to identify **hidden gems**, secure undervalued signings, and optimize transfer spending — gaining both **competitive edge on the pitch** and **financial efficiency** off it.
+However, the discrepancies between predicted and real-life values reveal:
+- The model excels at assessing technical and physical ability.
+- It struggles with intangible elements like reputation, media perception, or commercial value.
 
-**🟩 Overrated Players – Investment Risks**
+This misalignment is not a flaw — it’s an opportunity for deeper analysis.
 
-In contrast, overrated players have market values that **exceed their predicted worth**, suggesting they may be **overhyped by media, inconsistent in performance, pursued by multiple clubs, or paid excessively relative to their actual impact.**
-> **Practical Application:** Early identification of overrated players allows clubs to **avoid risky or overpriced transfers, negotiate more realistic transfer fees** for targets, and **reevaluate salary structures** or **transfer decisions** based on true value rather than perception.
+### **Recommendations**
+Based on the findings from the Random Forest model and the comparison between predicted and actual market values, we propose several recommendations for key stakeholders involved in player scouting, valuation, and decision-making.
 
-**Conclusion:**
-The Overrated – Underrated analysis is not just a data exercise — it's a **strategic tool** in scouting, recruitment, and transfer planning. By leveraging data-driven valuation models, clubs can:
-- Identify **high-potential transfer targets** at fair or bargain prices.
-- Minimize **financial risks** associated with overpaying.
-- Optimize **human resource investment** based on objective performance indicators rather than subjective bias or media influence.
+**1. For Clubs and Scouting Departments:**
+- Clubs should broaden their evaluation framework by prioritizing **long-term and strategic indicators** such as **player potential, physical fitness**, and **mental attributes**, rather than relying solely on current technical ability.
+- Talented young players with high potential are often **undervalued in the market**, representing **high-return investment opportunities** if identified and signed early.
+- The model can serve as a **data-driven scouting assistant**, helping clubs to uncover **underrated players** whose in-game attributes suggest higher future value.
 
-**📌 Recommendations for Clubs & Transfer Analysts:**
-- **Integrate Predictive Valuation into Scouting Pipelines**
-Use machine learning-based valuation as a standard filter when evaluating new player targets. This enables **early identification of undervalued talent and helps prioritize recruitment efforts.**
-- **Build a "Watchlist" of Underrated Players**
-Maintain a dynamic list of players flagged by the model as underrated. These could be **ideal transfer targets** for clubs with long-term planning, youth development focus, or financial limitations.
-- **Avoid Overpaying Through Objective Benchmarks**
-Before finalizing high-profile signings, use predicted valuations to **benchmark against hype-driven market prices**, minimizing the risk of signing **overpriced or underperforming players.**
-- **Strengthen Negotiation Leverage**
-Data-backed insights on overvaluation can be a **powerful negotiation tool**, helping clubs argue for lower transfer fees or structured payment plans based on actual performance.
-- **Combine Model Output with Human Expertise**
-While predictive models offer quantitative power, they should **complement, not replace**, the work of scouts and analysts. A hybrid approach—balancing data with tactical fit, attitude, and injury history—yields the best decisions.
-> ⚽ **Final Thought:**
-In an era where **transfer decisions can define a club's future**, embracing data-driven valuation isn't just a competitive advantage — it's a **necessity for modern football success.**
+**2. For Football Data Analysts:**
+- Future models should consider integrating **off-pitch factors** such as **media impact, commercial value, injury history**, and **recent form**, which significantly influence real-world transfer fees.
+- Discrepancies between predicted and actual values should be viewed as **anomaly indicators**, highlighting cases where players might be mispriced and warrant further qualitative analysis.
+- These insights can contribute to building **interactive dashboards** that blend quantitative model outputs with expert scouting reports for more balanced and strategic decision-making.
+
+**3. For Club Executives and Investors:**
+- Transfer decisions should not be overly influenced by **brand value or name recognition**, especially when these elements are not reflected in technical or physical performance.
+- Model predictions can provide a **reference point during transfer negotiations**, helping clubs avoid overpaying based on market hype or pressure.
+- Investing in **young, high-potential players** not only aligns with model recommendations but also supports long-term club growth and financial sustainability.
+
+**Final Through**
+>*The model is not designed to replace human judgment in scouting but rather to act as a **decision support tool.** When combined with expert insights and qualitative assessments, such models can significantly enhance a club’s ability to operate efficiently in a **highly competitive and dynamic transfer market.***
 
 # 🔗 Colab Notebook
 👉 [Open in Google Colab](https://colab.research.google.com/drive/1ma19-GwRy4zmyPqdkOeCV0IZx0ErDkVg?usp=sharing)
