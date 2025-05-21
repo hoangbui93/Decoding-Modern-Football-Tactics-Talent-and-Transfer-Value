@@ -401,7 +401,7 @@ From this chart we can see that there has been a clear shift in the tactical met
 > The tactical transformation of modern football demands **multifunctional, tactically intelligent players.** Coaches should train adaptability, scouts should find versatility, and analysts must redefine excellence based on evolving roles — because success no longer lies in specialization alone, but in **synchronized versatility.**
 
 
-# **Part 2 – The Making of a Great Player**
+# **Part 2 – The Making of Great Players**
 > ***This study focuses on in-game attributes only, not real-life performance metrics.***
 
 ![Alt text](https://github.com/hoangbui93/Decoding-Modern-Football-Tactics-Talent-and-Transfer-Value/blob/main/pics/Gullit.jpg)
