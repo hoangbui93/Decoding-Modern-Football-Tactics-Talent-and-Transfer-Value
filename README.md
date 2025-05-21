@@ -573,7 +573,7 @@ With specific player dataset like FIFA's which has many attributes and is often 
 After train 2 models and evaluate them we can see the comparison between **Linear Regression** and **Random Forest**:
 **Random Forest excels**
 - With R² = 0.79, the Random Forest model **explains nearly 80% of the variation in player prices** → very good for real-world data with a lot of noise.
-- MAE ~ 1.64 million € is a fairly **low average error** compared to the market size (most mid-range players are in the 1–10 million € range).
+- MAE ~ 1.64 million € is a fairly **low average error** compared to the market size.
 
 **Simple Linear Regression and underfitting**
 - Only reaching R² = 0.54 → the linear model **ignores many nonlinear relationships**, not suitable for complex data characteristics such as football (many interacting factors, nonlinear).
