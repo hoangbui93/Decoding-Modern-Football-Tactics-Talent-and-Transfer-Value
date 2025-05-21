@@ -211,7 +211,7 @@ memory usage: 33.3+ MB
 - Here we don't need to fillna for the market_value_in_eur column because it is **the actual market value of Transfermarkt**, we need real data to evaluate underrated/overrated for part 3.
 - 5% missing is **acceptable**, we can drop these rows before performing model building and evaluate after model building.
 
-# 🔍 EXPLORATORY DATA ANALYSIS
+# 🔍 Exploratory Data Analysis
 ## Dataset description
 
 |index|player\_id|fifa\_version|short\_name|long\_name|player\_positions|overall|potential|value\_eur|wage\_eur|age|date\_of\_birth|height\_cm|weight\_kg|club\_name|nationality\_name|preferred\_foot|weak\_foot|skill\_moves|international\_reputation|work\_rate|
