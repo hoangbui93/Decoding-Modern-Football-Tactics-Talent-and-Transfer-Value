@@ -15,17 +15,17 @@ A comprehensive analysis that uncovers modern tactical shifts, reveals factors b
 # 🗂️ Project Structure
 - Part 1 - Tactical Shift Over Time
 - Part 2 – The Making of a Great Player
-- Part 3 - Market Pulse: Underrated vs Overrated
+- Part 3 - Market Pulse: Estimating Real-Life Player Value
 
 
 # 🧩 Research questions
 - Which position has evolved the most in modern football?
 - What attributes of positions have changed significantly over the years?
 - Is there a shift in the tactics and playing style of football teams over time?
-- What main attributes make a great player?
-- What core attributes make a great player?
+- What main attributes make great players?
+- What core attributes make great players?
 - What factors greatly affect a player's value?
-- Is a player overrated or underrated?
+- Can we use in-game attributes to approximate real-world player value?
 
 # 🔎 Expectation insights
 - ✅ Modern defenders need more versatile.
