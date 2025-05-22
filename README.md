@@ -383,7 +383,7 @@ From this chart we can see that there has been a clear shift in the tactical met
 ### **Recommendations for Coaches, Scouts, and Football Analysts**
 
 **For Coaches**
-- **Integrate versatility into training philosophy:** Encourage players, especially defenders and midfielders, to develop skills beyond their traditional roles. For example, defenders should be trained in ball control and distribution, while midfielders should be drilled on defensive positioning and recovery.
+- **Integrate versatility into training philosophy:** Encourage players, especially defenders and midfielders, to develop skills beyond their traditional roles. For example, defenders should be trained in ball control and distribution, while midfielders should be drilled on defensive positioning and ball recovery.
 - **Tactical emphasis on collective pressing and transition play:** Build tactical systems that emphasize **press-resistance**, **quick transitions**, and **fluid positional play**, leveraging the modern player's broader skillset.
 - **Adapt to player evolution:** Utilize players who can operate in multiple systems and positions (e.g., inverted full-backs, hybrid midfielders), maximizing tactical flexibility against different opponents.
 
